@@ -59,3 +59,7 @@ Message: {lead.message}
         'estate': estate,
         'apartment': apartment
     })
+
+
+def thankyou(request):
+    return render(request, 'thankyou.html')
