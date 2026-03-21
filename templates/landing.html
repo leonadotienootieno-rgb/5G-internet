@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Nairobi 5G Home Internet Installation</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f4f6f8;
+}
+
+header{
+background:#0f172a;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.hero{
+padding:60px;
+text-align:center;
+background:white;
+}
+
+.container{
+width:90%;
+max-width:700px;
+margin:auto;
+}
+
+form{
+background:white;
+padding:30px;
+border-radius:8px;
+margin-top:20px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+input,textarea{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+button{
+margin-top:20px;
+padding:14px;
+width:100%;
+background:#2563eb;
+border:none;
+color:white;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.whatsapp{
+display:block;
+text-align:center;
+margin-top:20px;
+background:#25D366;
+color:white;
+padding:12px;
+border-radius:6px;
+text-decoration:none;
+}
+
+footer{
+margin-top:40px;
+padding:20px;
+font-size:12px;
+text-align:center;
+color:gray;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<header>
+<h2>Nairobi 5G Home Internet Installation</h2>
+</header>
+
+
+<section class="hero">
+
+<div class="container">
+
+<h1>Get Fast 5G Home Internet Installed</h1>
+
+<p>
+Professional installation with outdoor 5G receiver,
+WiFi router and backup power bank.
+</p>
+
+<img src="{% static 'images/router.jpeg' %}" alt="" style="width:100%; border-radius: 8px; margin-top:20px;">
+
+<form method="POST">
+{% csrf_token %}
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="text" name="phone" placeholder="Phone Number" required>
+
+<input type="text" name="estate" placeholder="Estate / Area" required>
+
+<input type="text" name="apartment" placeholder="Apartment Name">
+
+<textarea name="message" placeholder="Optional message"></textarea>
+
+<button type="submit">Check Availability</button>
+
+</form>
+
+<a class="whatsapp"
+href="https://wa.me/254732254839?text=Hi%20I%20want%20to%20check%20Airtel%205G%20availability">
+Chat on WhatsApp
+</a>
+
+
+</div>
+
+</section>
+
+<footer>
+
+This is an independent installation assistance service and is not the official website of Airtel Kenya.
+
+</footer>
+
+</body>
+
+</html>
