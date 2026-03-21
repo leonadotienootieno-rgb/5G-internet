@@ -20,23 +20,17 @@ padding:20px;
 text-align:center;
 }
 
-.hero{
-padding:60px;
-text-align:center;
-background:white;
-}
-
 .container{
 width:90%;
-max-width:700px;
+max-width:600px;
 margin:auto;
+margin-top:50px;
 }
 
-form{
+.card{
 background:white;
 padding:30px;
 border-radius:8px;
-margin-top:20px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
@@ -71,6 +65,14 @@ border-radius:6px;
 text-decoration:none;
 }
 
+.success{
+background:#dcfce7;
+padding:15px;
+margin-top:20px;
+border-radius:6px;
+color:#166534;
+}
+
 footer{
 margin-top:40px;
 padding:20px;
@@ -83,53 +85,60 @@ color:gray;
 
 </head>
 
-
 <body>
 
 <header>
 <h2>Nairobi 5G Home Internet Installation</h2>
 </header>
 
-
-<section class="hero">
-
 <div class="container">
 
-<h1>Get Fast 5G Home Internet Installed</h1>
+<div class="card">
 
-<p>
-Professional installation with outdoor 5G receiver,
-WiFi router and backup power bank.
-</p>
+<h2>Check Airtel 5G Availability</h2>
 
-<img src="{% static 'images/router.jpeg' %}" alt="" style="width:100%; border-radius: 8px; margin-top:20px;">
+<p>Enter your location to see if installation is available.</p>
 
 <form method="POST">
 {% csrf_token %}
 
-<input type="text" name="name" placeholder="Your Name" required>
-
-<input type="text" name="phone" placeholder="Phone Number" required>
+{% if step == 1 %}
 
 <input type="text" name="estate" placeholder="Estate / Area" required>
-
 <input type="text" name="apartment" placeholder="Apartment Name">
 
+<button type="submit" name="check_availability">
+Check Availability
+</button>
+
+{% endif %}
+
+{% if step == 2 %}
+
+<div class="success">
+✅ Good news! 5G is available in your area.
+</div>
+
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="text" name="phone" placeholder="Phone Number" required>
 <textarea name="message" placeholder="Optional message"></textarea>
 
-<button type="submit">Check Availability</button>
+<button type="submit" name="submit_lead">
+Request Installation
+</button>
+
+{% endif %}
 
 </form>
 
 <a class="whatsapp"
-href="https://wa.me/254732254839?text=Hi%20I%20want%20to%20check%20Airtel%205G%20availability">
+href="https://wa.me/254732254839?text=Hi%20I%20want%20Airtel%205G%20installed">
 Chat on WhatsApp
 </a>
 
-
 </div>
 
-</section>
+</div>
 
 <footer>
 
