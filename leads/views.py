@@ -53,7 +53,7 @@ Message: {lead.message}
     else:
         form = LeadForm()
 
-    return render(request, 'landing.html', {
+    return render(request, 'index.html', {
         'step': step,
         'form': LeadForm(),
         'estate': estate,
