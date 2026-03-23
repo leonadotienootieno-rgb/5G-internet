@@ -12,9 +12,15 @@ A Django web application for collecting 5G internet installation leads in Nairob
 ## Local Development
 
 1. Clone the repository
-2. Install requirements: `pip install -r requirements.txt`
-3. Run migrations: `python manage.py migrate`
-4. Start server: `python manage.py runserver`
+2. Create virtual environment: `python -m venv venv`
+3. Activate: `source venv/bin/activate` (Linux/Mac) or `venv\Scripts\activate` (Windows)
+4. Install requirements: `pip install -r requirements.txt`
+5. Run migrations: `python manage.py migrate`
+6. Start server: `python manage.py runserver`
+
+## Requirements Management
+
+⚠️ **Important:** Never use `pip freeze > requirements.txt` as it captures all installed packages including system packages that will cause deployment failures. Only manually add packages you explicitly install for your project. Django automatically handles its own dependencies.
 
 ## PythonAnywhere Deployment
 
