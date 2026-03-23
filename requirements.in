@@ -1,0 +1,6 @@
+# Source requirements - only packages you explicitly install
+# Run: pip install pip-tools
+# Then: pip-compile requirements.in
+# This generates requirements.txt with exact versions and dependencies
+
+Django==4.2.11

@@ -23,10 +23,23 @@ A Django web application for collecting 5G internet installation leads in Nairob
 ⚠️ **CRITICAL WARNING:** Never use `pip freeze > requirements.txt` as it captures all installed packages including system packages that will cause deployment failures on platforms like PythonAnywhere, Heroku, etc.
 
 ### How to properly manage requirements:
+
+#### Option 1: Manual Management (Recommended for simple projects)
 1. **Only add packages you explicitly install** for your project
 2. **Django automatically handles its own dependencies** (asgiref, sqlparse, etc.)
 3. **For production deployment**, keep requirements.txt minimal
 4. **If you need to add a package**, manually edit requirements.txt
+
+#### Option 2: Using pip-tools (For complex projects)
+1. Edit `requirements.in` to add new packages
+2. Install pip-tools: `pip install pip-tools`
+3. Generate locked requirements: `pip-compile requirements.in`
+4. This creates a clean requirements.txt with exact versions
+
+#### Option 3: Use the provided script
+```bash
+./generate_requirements.sh
+```
 
 ### Example of correct requirements.txt:
 ```
