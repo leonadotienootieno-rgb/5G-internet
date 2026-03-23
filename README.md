@@ -20,7 +20,24 @@ A Django web application for collecting 5G internet installation leads in Nairob
 
 ## Requirements Management
 
-⚠️ **Important:** Never use `pip freeze > requirements.txt` as it captures all installed packages including system packages that will cause deployment failures. Only manually add packages you explicitly install for your project. Django automatically handles its own dependencies.
+⚠️ **CRITICAL WARNING:** Never use `pip freeze > requirements.txt` as it captures all installed packages including system packages that will cause deployment failures on platforms like PythonAnywhere, Heroku, etc.
+
+### How to properly manage requirements:
+1. **Only add packages you explicitly install** for your project
+2. **Django automatically handles its own dependencies** (asgiref, sqlparse, etc.)
+3. **For production deployment**, keep requirements.txt minimal
+4. **If you need to add a package**, manually edit requirements.txt
+
+### Example of correct requirements.txt:
+```
+Django==4.2.11
+django-crispy-forms==2.1
+```
+
+### Wrong way (causes deployment failures):
+```bash
+pip freeze > requirements.txt  # ❌ NEVER DO THIS
+```
 
 ## PythonAnywhere Deployment
 
