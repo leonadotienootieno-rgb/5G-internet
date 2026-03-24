@@ -97,12 +97,13 @@ application = get_wsgi_application()
 
 ### Step 6: Configure Web App
 1. Go to Web tab in PythonAnywhere
-2. Add a new web app
+2. Your web app should already exist (if not, create a new one)
 3. Choose **Manual configuration** and **Python 3.10**
 4. Set the source code path to: `/home/yourusername/5G-internet`
-5. Set the WSGI file path to: `/home/yourusername/5G-internet/internet_leads/wsgi.py`
-6. Set virtualenv path to: `/home/yourusername/.virtualenvs/myenv`
-7. Set static files:
+5. Set the working directory to: `/home/yourusername/5G-internet`
+6. Set the WSGI file path to: `/home/yourusername/5G-internet/internet_leads/wsgi.py`
+7. Set virtualenv path to: `/home/yourusername/.virtualenvs/myenv`
+8. Set static files:
    - URL: `/static/`
    - Path: `/home/yourusername/5G-internet/staticfiles`
 
@@ -111,7 +112,7 @@ Set these in Web > Environment variables:
 - `DJANGO_SETTINGS_MODULE=internet_leads.settings`
 - `SECRET_KEY=your-secret-key-here`
 - `DEBUG=False`
-- `ALLOWED_HOSTS=your-domain.pythonanywhere.com`
+- `ALLOWED_HOSTS=smartconnect.pythonanywhere.com`
 
 ### Step 8: Reload Web App
 Click the green reload button to deploy.
